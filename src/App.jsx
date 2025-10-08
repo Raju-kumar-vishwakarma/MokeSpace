@@ -1,19 +1,35 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
+import ErrorPage from "./pages/ErrorPage";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
 import { useContext } from "react";
 import { AppContext } from "./context/AppContext";
 import ErrorPage from "./pages/ErrorPage";
 import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
+>>>>>>> 8d1502d (edit)
 
 function App() {
   const { token } = useContext(AppContext);
   return (
-    <div>
+    <div className="container mx-auto">
       <ToastContainer />
       <Routes>
         <Route path="*" element={<ErrorPage />} />
+<<<<<<< HEAD
+        <Route path={"/"} element={<Home />} />
+        <Route path={"/login"} element={<Home />} />
+        <Route path={"/my-profile"} element={<Home />} />
+        <Route path={"/about"} element={<Home />} />
+        <Route path={"/partner"} element={<Home />} />
+        <Route path={"/contact"} element={<Home />} />
+        <Route path={"/privacy-policy"} element={<Home />} />
+      </Routes>
+      <Footer />
+=======
         {!token ? (
           <>
             <Route path={"/"} element={<LandingPage />} />
@@ -30,6 +46,7 @@ function App() {
           </>
         )}
       </Routes>
+>>>>>>> 8d1502d (edit)
     </div>
   );
 }
